@@ -1,0 +1,10 @@
+<?php
+namespace devfolio;
+
+include_once __DIR__ . '/util/class-base.php';
+
+include_once __DIR__ . '/theme/class-enqueue.php';
+include_once __DIR__ . '/theme/class-menu.php';
+include_once __DIR__ . '/theme/class-support.php';
+
+include_once __DIR__ . '/admin/class-editor.php';
