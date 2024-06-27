@@ -22,6 +22,22 @@ class CustomPostTypeConfig extends Base
      */
     public function initCustomPostTypes()
     {
+        $this->addPostType(
+            'content block',
+            (object) [
+                'icon' => 'editor aligncenter',
+                'features' => 'title, editor',
+            ]
+        );
+
+        $this->addPostType(
+            'html snippet',
+            (object) [
+                'collection' => 'HTML snippets',
+                'icon' => 'html',
+                'features' => 'title, editor',
+            ]
+        );
     }
 
     /**
