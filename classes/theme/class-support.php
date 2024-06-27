@@ -22,8 +22,11 @@ class ThemeSupportConfig extends Base
      */
     public function initThemeSupport()
     {
+        $this->addThemeSupport('custom logo');
         $this->addThemeSupport('post thumbnails');
         $this->addThemeSupport('title tag');
+
+        $this->removeThemeSupport('widgets block editor');
     }
 
     /**
