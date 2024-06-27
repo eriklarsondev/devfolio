@@ -1,0 +1,57 @@
+html,
+body {
+  @apply leading-6 bg-slate-800 font-sans font-light text-slate-400;
+}
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-5 leading-loose font-sans font-bold text-slate-100;
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+h4 {
+  @apply text-base;
+}
+
+h5 {
+  @apply text-sm;
+}
+
+h6 {
+  @apply text-xs;
+}
+
+p {
+  @apply mb-5;
+}
+
+strong {
+  @apply font-normal text-slate-100;
+}
+
+hr {
+  @apply my-8 border-t-2 border-slate-700 rounded-full;
+}
+
+::selection {
+  @apply bg-accent text-slate-900;
+}
