@@ -57,10 +57,12 @@ class FileEnqueueConfig extends Base
      * unregister and dequeue existing css stylesheet
      *
      * @param string $name
+     * @param boolean $prefix
      * @return void
      */
-    private function removeStylesheet($name)
+    private function removeStylesheet($name, $prefix = true)
     {
+        $id = parent::formatLabel($name, '-');
     }
 
     /**
