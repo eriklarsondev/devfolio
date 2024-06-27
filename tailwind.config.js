@@ -13,7 +13,8 @@ module.exports = {
         accent: colors.emerald[300]
       },
       fontFamily: {
-        sans: ['Inter', ...theme.fontFamily.sans]
+        serif: ['PT Serif', ...theme.fontFamily.serif],
+        sans: ['Roboto Condensed', ...theme.fontFamily.sans]
       }
     }
   }
