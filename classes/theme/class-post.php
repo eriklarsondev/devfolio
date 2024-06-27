@@ -52,7 +52,7 @@ class CustomPostTypeConfig extends Base
                 : 'dashicons-admin-plugins',
             'menu_position' => isset($config->order) ? (int) $config->order : null,
             'public' => true,
-            'publicly_queryable' => true,
+            'publicly_queryable' => false,
             'query_var' => $id,
             'rest_base' => isset($config->collection)
                 ? parent::formatLabel($config->collection, '-', false)
