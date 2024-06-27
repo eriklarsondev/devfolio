@@ -2,8 +2,14 @@
 Theme Name: Devfolio
 Theme URI: #
 Version: 0.1.0
-Description: A scalable headless WordPress theme optimized for managing your portfolio content
+Requires PHP: 7.0
+Requires at least: 5.0
+Tested up to: 6.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Description: A scalable headless WordPress theme designed for managing your portfolio content
+Text Domain: devfolio
 Author: Erik Larson
 Author URI: #
-Tags:
+Tags: WordPress Theme, Headless Architecture, REST API, Advanced Custom Fields, Laravel Mix, Tailwind
 */

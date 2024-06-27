@@ -161,7 +161,7 @@ class CustomPostTypeConfig extends Base
     }
 
     /**
-     * static wrapper to unegister custom post type
+     * static wrapper to unregister custom post type
      *
      * @param string $post_type
      * @return void
