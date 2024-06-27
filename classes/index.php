@@ -15,3 +15,13 @@ include_once __DIR__ . '/admin/class-admin.php';
 include_once __DIR__ . '/admin/class-customizer.php';
 include_once __DIR__ . '/admin/class-editor.php';
 include_once __DIR__ . '/admin/class-plugin.php';
+
+class Devfolio
+{
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+    }
+}
