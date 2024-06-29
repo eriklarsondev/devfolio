@@ -11,11 +11,14 @@ include_once __DIR__ . '/theme/class-post.php';
 include_once __DIR__ . '/theme/class-redirect.php';
 include_once __DIR__ . '/theme/class-sidebar.php';
 include_once __DIR__ . '/theme/class-support.php';
+include_once __DIR__ . '/theme/class-theme.php';
 
 include_once __DIR__ . '/admin/class-admin.php';
 include_once __DIR__ . '/admin/class-customizer.php';
 include_once __DIR__ . '/admin/class-editor.php';
+include_once __DIR__ . '/admin/class-login.php';
 include_once __DIR__ . '/admin/class-plugin.php';
+include_once __DIR__ . '/admin/class-toolbar.php';
 
 class Devfolio
 {
@@ -134,5 +137,17 @@ class Devfolio
      */
     static function add_support($feature)
     {
+        ThemeSupportConfig::add_theme_support($feature);
+    }
+
+    /**
+     * static wrapper to unregister existing theme support
+     *
+     * @param string $feature
+     * @return void
+     */
+    static function remove_support($feature)
+    {
+        ThemeSupportConfig::remove_theme_support($feature);
     }
 }

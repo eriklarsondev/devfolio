@@ -10,7 +10,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        accent: colors.emerald[300]
+        accent: colors.emerald[400]
       },
       fontFamily: {
         serif: ['PT Serif', ...theme.fontFamily.serif],
