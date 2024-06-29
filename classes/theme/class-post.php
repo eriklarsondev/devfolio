@@ -139,7 +139,7 @@ class CustomPostTypeConfig extends Base
         if ($supported) {
             $arr = explode(',', $supported);
             for ($i = 0; $i < count($arr); $i++) {
-                array_push($features, trim($arr[$i]));
+                array_push($features, parent::formatLabel(trim($arr[$i]), '-', false));
             }
         } else {
             $features = [

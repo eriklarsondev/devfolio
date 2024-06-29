@@ -39,7 +39,7 @@ class RequiredPluginConfig extends Base
                 $url = $this->getSearchQuery($plugin_name); ?>
                 <div class="notice notice-error">
                     <p>
-                        <strong><?php echo ucwords($plugin_name); ?></strong> was not found.
+                        <strong><?php echo $plugin_name; ?></strong> was not found.
                         Click <a href="<?php echo $url; ?>">here</a> to install or activate this plugin.
                     </p>
                 </div>
