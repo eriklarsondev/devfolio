@@ -23,7 +23,7 @@ class ToolbarConfig
             #wpadminbar #wp-admin-bar-wp-logo > .ab-item {
                 background-image: url(<?php echo $icon_path; ?>);
                 background-position: center;
-                background-size: 75% 75%;
+                background-size: 60% 60%;
                 background-repeat: no-repeat;
             }
 

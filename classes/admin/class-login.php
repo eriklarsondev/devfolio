@@ -37,6 +37,7 @@ class LoginConfig
                 width: 200px;
                 height: 150px;
                 background-image: url(<?php echo $logo_path; ?>);
+                background-position: center;
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
             }
