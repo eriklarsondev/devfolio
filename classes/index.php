@@ -30,97 +30,97 @@ class Devfolio
     }
 
     /**************************************************************************
-     *** static wrapper methods for required plugin config
+     *** methods for required plugin config
      *************************************************************************/
 
     /**
-     * static wrapper to check to see if plugin is installed and active
+     * check to see if plugin is installed and active
      *
      * @param string $class_name
      * @param string $plugin_name
      * @return void
      */
-    static function require_plugin($class_name, $plugin_name)
+    public function requirePlugin($class_name, $plugin_name)
     {
         RequiredPluginConfig::require_plugin($class_name, $plugin_name);
     }
 
     /**************************************************************************
-     *** static wrapper methods for menu location config
+     *** methods for menu location config
      *************************************************************************/
 
     /**
-     * static wrapper to register new menu location
+     * register new menu location
      *
      * @param string $menu_name
      * @return void
      */
-    static function add_menu($menu_name)
+    public function addMenu($menu_name)
     {
         MenuLocationConfig::add_menu_location($menu_name);
     }
 
     /**
-     * static wrapper to unregister existing menu location
+     * unregister existing menu location
      *
      * @param string $menu_name
      * @return void
      */
-    static function remove_menu($menu_name)
+    public function removeMenu($menu_name)
     {
         MenuLocationConfig::remove_menu_location($menu_name);
     }
 
     /**************************************************************************
-     *** static wrapper methods for custom post type config
+     *** methods for custom post type config
      *************************************************************************/
 
     /**
-     * static wrapper to register new custom post type
+     * register new custom post type
      *
      * @param string $post_type
      * @param object $config
      * @return void
      */
-    static function add_post_type($post_type, $config)
+    public function addPostType($post_type, $config)
     {
         CustomPostTypeConfig::add_post_type($post_type, $config);
     }
 
     /**
-     * static wrapper to unregister custom post type
+     * unregister custom post type
      *
      * @param string $post_type
      * @return void
      */
-    static function remove_post_type($post_type)
+    public function removePostType($post_type)
     {
         CustomPostTypeConfig::remove_post_type($post_type);
     }
 
     /**************************************************************************
-     *** static wrapper methods for sidebar/widget location config
+     *** methods for sidebar/widget location config
      *************************************************************************/
 
     /**
-     * static wrapper to register new sidebar/widget location
+     * register new sidebar/widget location
      *
      * @param string $sidebar_name
      * @param string $description
      * @return void
      */
-    static function add_sidebar($sidebar_name, $description = '')
+    public function addSidebar($sidebar_name, $description = '')
     {
         SidebarLocationConfig::add_sidebar_location($sidebar_name, $description);
     }
 
     /**
-     * static wrapper to unregister sidebar/widget location
+     * unregister sidebar/widget location
      *
      * @param string $sidebar_name
      * @return void
      */
-    static function remove_sidebar($sidebar_name)
+    public function removeSidebar($sidebar_name)
     {
         SidebarLocationConfig::remove_sidebar_location($sidebar_name);
     }
@@ -130,23 +130,23 @@ class Devfolio
      *************************************************************************/
 
     /**
-     * static wrapper to register new theme support
+     * register new theme support
      *
      * @param string $feature
      * @return void
      */
-    static function add_support($feature)
+    public function addSupport($feature)
     {
         ThemeSupportConfig::add_theme_support($feature);
     }
 
     /**
-     * static wrapper to unregister existing theme support
+     * unregister existing theme support
      *
      * @param string $feature
      * @return void
      */
-    static function remove_support($feature)
+    public function removeSupport($feature)
     {
         ThemeSupportConfig::remove_theme_support($feature);
     }

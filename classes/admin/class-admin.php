@@ -16,6 +16,8 @@ class AdminConfig
         add_filter('auto_update_plugin', '__return_false');
 
         add_action('admin_head', [$this, 'setFavicon']);
+
+        add_action('admin_init', [$this, 'disableAdminPages']);
     }
 
     /**
@@ -28,6 +30,18 @@ class AdminConfig
         $favicon_path = dirname(get_template_directory_uri()) . '/public/favicon.ico'; ?>
         <link rel="shortcut icon" href="<?php echo $favicon_path; ?>">
         <?php
+    }
+
+    /**
+     * disable admin pages found in dashboard sidebar
+     *
+     * @return void
+     */
+    public function disableAdminPages()
+    {
+        remove_menu_page('edit.php?post_type=page');
+        remove_menu_page('edit-comments.php');
+        remove_submenu_page('themes.php', 'edit.php?post_type=wp_block');
     }
 }
 

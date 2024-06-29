@@ -99,11 +99,12 @@ class CustomPostTypeConfig extends Base
      * unregister existing custom post type
      *
      * @param string $post_type
+     * @param boolean $prefix
      * @return void
      */
-    private function removePostType($post_type)
+    private function removePostType($post_type, $prefix = true)
     {
-        $id = parent::formatLabel($post_type);
+        $id = parent::formatLabel($post_type, '_', $prefix);
         unregister_post_type($id);
     }
 
@@ -180,12 +181,13 @@ class CustomPostTypeConfig extends Base
      * static wrapper to unregister custom post type
      *
      * @param string $post_type
+     * @param boolean $prefix
      * @return void
      */
-    static function remove_post_type($post_type)
+    static function remove_post_type($post_type, $prefix = true)
     {
-        add_action('init', function () use ($post_type) {
-            (new self(true))->removePostType($post_type);
+        add_action('init', function () use ($post_type, $prefix) {
+            (new self(true))->removePostType($post_type, $prefix);
         });
     }
 }
