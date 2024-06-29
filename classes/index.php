@@ -36,13 +36,13 @@ class Devfolio
     /**
      * check to see if plugin is installed and active
      *
-     * @param string $class_name
      * @param string $plugin_name
+     * @param string $class_name
      * @return void
      */
-    public function requirePlugin($class_name, $plugin_name)
+    public function requirePlugin($plugin_name, $class_name = '')
     {
-        RequiredPluginConfig::require_plugin($class_name, $plugin_name);
+        RequiredPluginConfig::require_plugin($plugin_name, $class_name);
     }
 
     /**************************************************************************

@@ -22,32 +22,38 @@ class RequiredPluginConfig extends Base
      */
     public function initRequiredPlugins()
     {
-        $this->isPluginActive('ACF', 'advanced custom fields');
+        $this->isPluginActive('Advanced Custom Fields', 'ACF');
     }
 
     /**
      * check to see if plugin is installed and active
      *
-     * @param string $class_name
      * @param string $plugin_name
+     * @param string $class_name
      * @return boolean
      */
-    private function isPluginActive($class_name, $plugin_name)
+    private function isPluginActive($plugin_name, $class_name = '')
     {
-        if (!class_exists($class_name)) {
-            add_action('admin_notices', function () use ($plugin_name) {
-                $url = $this->getSearchQuery($plugin_name); ?>
-                <div class="notice notice-error">
-                    <p>
-                        <strong><?php echo $plugin_name; ?></strong> was not found.
-                        Click <a href="<?php echo $url; ?>">here</a> to install or activate this plugin.
-                    </p>
-                </div>
-                <?php
-            });
-            return false;
+        if ($class_name) {
+            if (!class_exists($class_name)) {
+                $this->renderNotification($plugin_name);
+                return false;
+            }
+            return true;
+        } else {
+            $plugin_names = [];
+            $plugins = get_plugins();
+
+            foreach ($plugins as $plugin) {
+                array_push($plugin_names, $plugin['Name']);
+            }
+
+            if (!in_array($plugin_name, $plugin_names)) {
+                $this->renderNotification($plugin_name);
+                return false;
+            }
+            return true;
         }
-        return true;
     }
 
     /**
@@ -66,6 +72,26 @@ class RequiredPluginConfig extends Base
         return $url;
     }
 
+    /**
+     * render notification
+     *
+     * @param string $plugin_name
+     * @return void
+     */
+    private function renderNotification($plugin_name)
+    {
+        add_action('admin_notices', function () use ($plugin_name) {
+            $url = $this->getSearchQuery($plugin_name); ?>
+            <div class="notice notice-error">
+                <p>
+                    <strong><?php echo $plugin_name; ?></strong> was not found.
+                    Click <a href="<?php echo $url; ?>">here</a> to install or activate this plugin.
+                </p>
+            </div>
+            <?php
+        });
+    }
+
     /**************************************************************************
      *** static wrapper methods for required plugin config
      *************************************************************************/
@@ -73,14 +99,14 @@ class RequiredPluginConfig extends Base
     /**
      * static wrapper to check to see if plugin is installed and active
      *
-     * @param string $class_name
      * @param string $plugin_name
+     * @param string $class_name
      * @return void
      */
-    static function require_plugin($class_name, $plugin_name)
+    static function require_plugin($plugin_name, $class_name = '')
     {
-        add_action('admin_init', function () use ($class_name, $plugin_name) {
-            (new self(true))->isPluginActive($class_name, $plugin_name);
+        add_action('admin_init', function () use ($plugin_name, $class_name) {
+            (new self(true))->isPluginActive($plugin_name, $class_name);
         });
     }
 }
