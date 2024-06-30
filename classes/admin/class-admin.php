@@ -39,7 +39,6 @@ class AdminConfig
      */
     public function disableAdminPages()
     {
-        remove_menu_page('edit.php?post_type=page');
         remove_menu_page('edit-comments.php');
         remove_submenu_page('themes.php', 'edit.php?post_type=wp_block');
     }
